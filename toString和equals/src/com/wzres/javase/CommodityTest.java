@@ -1,3 +1,5 @@
+package com.wzres.javase;
+
 /**
  * @ClassName：CommodityTest
  * @description：

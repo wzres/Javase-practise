@@ -1,3 +1,5 @@
+package com.wzres.javase;
+
 import java.util.Objects;
 
 /**
@@ -16,7 +18,9 @@ public class Commodity {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
+        if (this == o) {
+            return true;
+        }
         if (o == null || getClass() != o.getClass()) return false;
         Commodity commodity = (Commodity) o;
         return number == commodity.number && Double.compare(commodity.price, price) == 0 && Objects.equals(name, commodity.name);
