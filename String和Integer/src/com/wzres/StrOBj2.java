@@ -15,5 +15,8 @@ public class StrOBj2 {
         String strObj = new String(chas);
         System.out.println(strOBj);
 
+        // 这种方法创建比较常用，推荐
+        String s1 = "123";
+        String s2 = "123";
     }
 }
