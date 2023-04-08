@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.extends01;
 
 /**
  * @ClassName：School
  * @description：继承父类的属性
  * @date：2023-03-29 07:58
  */
-public class ExtendsTest {
+public class ExtendsTest1 {
     public static void main(String[] args) {
         Student student = new Student();
         student.setName("张三");
