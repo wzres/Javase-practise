@@ -1,13 +1,11 @@
-package cn.wzres;
-
-import java.util.List;
+package com.wzres.multi1;
 
 /**
  * @ClassName：MultiTest
  * @description：多态
  * @date：2023-03-29 08:19
  */
-public class MultiTest {
+public class MultiTest1 {
     //多态：父类型引用指向子类型对象
     public static void main(String[] args) {
         // 无论是向上转型和向下转型，两种类型之间必须有继承关系，否则编译错误

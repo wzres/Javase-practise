@@ -1,4 +1,4 @@
-package org.wztest;
+package com.wzres.multi3;
 
 /**
  * @ClassName：Animal
@@ -6,7 +6,7 @@ package org.wztest;
  * @date：2023-04-02 00:50
  */
 
-public class AnimalTest{
+public class MultiTest1 {
     public static void main(String[] args) {
         // 向上转型
 

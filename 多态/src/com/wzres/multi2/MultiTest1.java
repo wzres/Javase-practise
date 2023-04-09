@@ -1,11 +1,11 @@
-package org.wzres;
+package com.wzres.multi2;
 
 /**
  * @ClassName：MultiAnimal
  * @description：
  * @date：2023-03-30 00:53
  */
-public class MultiAnimal {
+public class MultiTest1 {
  public static void main(String[] args) {
     //向上转型
     Animal animal = new Cat();

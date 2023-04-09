@@ -1,11 +1,11 @@
-package org.wzres;
+package com.wzres.multi1;
 
 /**
  * @ClassName：OverridePerson
  * @description：
  * @date：2023-03-31 00:20
  */
-public class OverrideComputer {
+public class MultiTest2 {
     public static void main(String[] args) {
         //多态➟向上转型
         Computer c = new lenovo();

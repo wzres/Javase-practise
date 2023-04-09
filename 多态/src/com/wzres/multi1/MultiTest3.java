@@ -1,6 +1,4 @@
-package com.wztest;
-
-import com.sun.xml.internal.bind.v2.model.core.ID;
+package com.wzres.multi1;
 
 import java.util.Date;
 
@@ -9,7 +7,7 @@ import java.util.Date;
  * @description：
  * @date：2023-04-04 09:12
  */
-public class MultiTest {
+public class MultiTest3 {
     public static void main(String[] args) {
         //向上转型
         School s = new Student();

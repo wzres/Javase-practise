@@ -1,11 +1,11 @@
-package org.wzres;
+package com.wzres.override1;
 
 /**
  * @ClassName：Student
  * @description：
  * @date：2023-03-30 00:49
  */
-public class OverrideStudent {
+public class OverrideTest2 {
 
     public static void main(String[] args) {
         Tom tom = new Tom();

@@ -1,4 +1,4 @@
-package com.wzres;
+package com.wzres.override1;
 
 /**
  * @ClassName：Animal
@@ -17,7 +17,7 @@ class Cat extends Animal {
         System.out.println("猫在走猫步...");
     }
 }
- public class OverrideTest {
+ public class OverrideTest1 {
     public static void main(String[] args) {
         Cat cat = new Cat();
         cat.move();

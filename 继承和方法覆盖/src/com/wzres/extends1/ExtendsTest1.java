@@ -1,4 +1,4 @@
-package com.wzres.extends01;
+package com.wzres.extends1;
 
 /**
  * @ClassName：School
