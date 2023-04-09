@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.string1;
 
 /**
  * @ClassName：StrTest
  * @description：
  * @date：2023-04-02 01:07
  */
-public class StrTest1 {
+public class StringObj2 {
     public static void main(String[] args) {
         String a1 = "a1";
         String a2 = "a1";

@@ -1,4 +1,4 @@
-package com.wzres.multi3;
+package multi3;
 
 import java.util.Date;
 

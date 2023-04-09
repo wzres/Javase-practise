@@ -1,4 +1,4 @@
-package com.wzres;
+package com.wzres.string1;
 
 import java.util.Arrays;
 
@@ -7,7 +7,7 @@ import java.util.Arrays;
  * @description：
  * @date：2023-04-02 23:54
  */
-public class StringMethod {
+public class StrMethod1 {
     public static void main(String[] args) {
         // 大小写
         String s = "syR".toLowerCase();

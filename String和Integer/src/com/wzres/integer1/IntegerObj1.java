@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.integer1;
 
 /**
  * @ClassName：IntegerObj
  * @description：
  * @date：2023-04-05 03:07
  */
-public class IntegerObj {
+public class IntegerObj1 {
     public static void main(String[] args) {
 
         //手动装箱

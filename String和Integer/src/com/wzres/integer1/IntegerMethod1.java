@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.integer1;
 
 /**
  * @ClassName：IntegerMethod
  * @description：
  * @date：2023-04-03 00:10
  */
-public class IntegerMethod {
+public class IntegerMethod1 {
     public static void main(String[] args) {
         // int ➟ Integer
         Integer i = 127;

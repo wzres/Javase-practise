@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.string1;
 
 /**
  * @ClassName：StrOBj
  * @description：
  * @date：2023-04-05 03:20
  */
-public class StrOBj {
+public class StringObj1 {
 
     public static void main(String[] args) {
         String s1 = "123"; //字符串常量池创建

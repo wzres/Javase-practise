@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.string1;
 
 /**
  * @ClassName：StrTest2
  * @description：
  * @date：2023-04-02 01:44
  */
-public class StrTest2 {
+public class StrMethod2 {
     public static void main(String[] args) {
         //①
         //转换小写

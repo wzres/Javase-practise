@@ -1,4 +1,4 @@
-package com.wzres.javase;
+package com.wzres.javase1;
 
 /**
  * @ClassName：CommodityTest

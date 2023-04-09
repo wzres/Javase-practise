@@ -1,11 +1,11 @@
-package com.wzres;
+package com.wzres.integer1;
 
 /**
  * @ClassName：IntTest
  * @description：常量池
  * @date：2023-04-02 23:39
  */
-public class IntAndString {
+public class IntegerAndString {
     public static void main(String[] args) {
     //Integer
         //整型常量池-128~127
