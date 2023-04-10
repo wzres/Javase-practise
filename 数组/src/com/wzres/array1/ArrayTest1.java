@@ -1,13 +1,11 @@
-package com.wzres;
-
-import java.util.Arrays;
+package com.wzres.array1;
 
 /**
  * @ClassName：arrays
  * @description：
  * @date：2023-04-02 01:16
  */
-public class arrays {
+public class ArrayTest1 {
     public static void main(String[] args) {
         //静态化初始化数组
         /*int [] arr = {97,98,99};
