@@ -13,7 +13,7 @@ import java.text.SimpleDateFormat;
 public class RuntimeExceptionTest1 { //最终抛给JVM虚拟机
     public static void main(String[] args) throws FileNotFoundException, ParseException {
         hello(); //抛给调用者，让调用者来处理这个异常
-
+        System.out.println("aaaa"); //这行代码不执行
     }
 
     public static void hello() throws FileNotFoundException { //编译时异常，如果不想在hello方法做处理，可以声明抛出给调用者
