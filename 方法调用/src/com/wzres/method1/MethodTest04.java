@@ -1,11 +1,11 @@
-package com.wzres.javase;
+package com.wzres.method1;
 
 /**
  * @ClassName：UserTest
  * @description：
  * @date：2023-04-08 18:34
  */
-public class UserTest {
+public class MethodTest04 {
     public static void main(String[] args) {
         User user = new User();
         user.setUsername("张三");

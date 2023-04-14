@@ -1,4 +1,6 @@
-public class StaticVar {
+package com.wzres.static1;
+
+public class StaticTest1 {
     public static void main(String[] args) {
         Student student = new Student();
         student.setNum(01);
@@ -8,7 +10,7 @@ public class StaticVar {
         student1.setName("lisi");
 
         //但这样就报错了
-        //Student.SchName;
+        //com.wzres.static1.Student.SchName;
         //这样就不报错
         System.out.println(Student.schName);
         System.out.println(student.getNum());

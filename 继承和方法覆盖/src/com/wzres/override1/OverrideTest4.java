@@ -1,11 +1,11 @@
-package com.wzres.javase;
+package com.wzres.override1;
 
 /**
  * @ClassName：ComputerTest
  * @description：
  * @date：2023-04-08 07:50
  */
-public class ComputerTest {
+public class OverrideTest4 {
     public static void main(String[] args) {
         Asus a = new Asus();
 

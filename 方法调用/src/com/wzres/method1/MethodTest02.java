@@ -1,4 +1,4 @@
-package com.wzres.javase;
+package com.wzres.method1;
 
 /**
  * @ClassName：MethodTest02

@@ -1,11 +1,11 @@
-package com.wzres.javase;
+package com.wzres.static1;
 
 /**
  * @ClassName：CodeBlockTest
  * @description：
  * @date：2023-03-31 01:20
  */
-public class CodeBlockTest01 {
+public class StaticTest2 {
 
     static int i = 10;
     static {
