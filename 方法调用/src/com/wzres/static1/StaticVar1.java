@@ -5,7 +5,7 @@ package com.wzres.static1;
  * @description：
  * @date：2023-04-06 07:45
  */
-public class StaticObj1 {
+public class StaticVar1 {
     private static int num1;
     private static int num2;
 
@@ -28,7 +28,7 @@ public class StaticObj1 {
         System.out.println(transfer(num1, num2));
         System.out.println(test());
 
-        StaticObj1 strOBj2 = new StaticObj1();
+        StaticVar1 strOBj2 = new StaticVar1();
         strOBj2.example();
 
     }
