@@ -9,7 +9,7 @@ import java.util.Date;
  * @description：
  * @date：2023-04-10 18:33
  */
-public class interfaceTest1 {
+public class InterfaceTest1 {
 
     public static void main(String[] args) {
         String [] arr = {"打球","游泳"};
