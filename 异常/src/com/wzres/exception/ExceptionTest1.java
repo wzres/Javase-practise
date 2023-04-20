@@ -1,23 +1,36 @@
 package com.wzres.exception;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
- * @ClassName：ExceptionTest1
- * @description：运行时异常
- * @date：2023-04-11 20:42
+ * @ClassName：RuntimeExceptionTest1
+ * @description：异常抛出
+ * @date：2023-04-11 18:46
  */
-public class ExceptionTest1 {
-    public static void main(String[] args) {
-        //捕捉运行时异常
-        try {
-            test(); //这里真的出现异常了，执行catch语句块里的代码
-        } catch (Exception e) {
-            System.out.println("出异常了");
-            e.printStackTrace(); //打印异常信息
-        }
+public class ExceptionTest1 { //最终抛给JVM虚拟机
+    public static void main(String[] args) throws FileNotFoundException, ParseException {
+        hello(); //抛给调用者，让调用者来处理这个异常
+        System.out.println("aaaa"); //这行代码不执行
     }
 
-    private static void test() {
-        String s = null;
-        System.out.println(s.length());
+    public static void hello() throws FileNotFoundException { //编译时异常，如果不想在hello方法做处理，可以声明抛出给调用者
+        FileInputStream aaa = new FileInputStream("aaa"); //编译时异常
     }
+
+    public static void test1() throws FileNotFoundException, ParseException {
+        test();
+    }
+
+    //多种异常抛出
+    public static void test() throws FileNotFoundException, ParseException { //编译时异常，抛出多种异常给调用者
+        FileInputStream aaa = new FileInputStream("aaa"); //编译时异常
+        SimpleDateFormat s = new SimpleDateFormat();
+        s.parse("456"); //编译时异常
+    }
+
 }
+
+

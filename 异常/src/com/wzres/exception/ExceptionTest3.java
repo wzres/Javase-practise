@@ -2,7 +2,6 @@ package com.wzres.exception;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
@@ -11,7 +10,7 @@ import java.text.SimpleDateFormat;
  * @description：
  * @date：2023-04-13 04:49
  */
-public class RuntimeExceptionTest3 {
+public class ExceptionTest3 {
     public static void main(String[] args) {
         try {
             test();

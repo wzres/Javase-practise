@@ -7,7 +7,7 @@ import java.util.Random;
  * @description：自定义异常
  * @date：2023-04-11 19:42
  */
-public class WZException{
+public class WZExceptionTest1 {
     public static void main(String[] args) {
         try {
             test();
