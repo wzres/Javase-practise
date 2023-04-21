@@ -23,6 +23,8 @@ public class VarTest10 {
         int x1 = 30;
         float f = x1;
 
+        float y = 15;
+
         int d = 3545;
         long l = d;
 
