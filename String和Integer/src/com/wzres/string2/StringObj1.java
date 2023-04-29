@@ -20,5 +20,15 @@ public class StringObj1 {
         System.out.println(s1);
         System.out.println(s1.equals(s2)); //true
 
+        byte [] bytes = {97,98,99};
+
+        String a = new String(bytes);
+        System.out.println(a);
+
+        String b = new String(bytes,1,2);
+        System.out.println(b); //bc
+
+
+
     }
 }
