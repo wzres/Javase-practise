@@ -1,4 +1,4 @@
-package com.wzres.myexception;
+package com.wzres.myexception1;
 
 import java.util.Random;
 
