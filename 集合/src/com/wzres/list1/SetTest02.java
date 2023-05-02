@@ -1,4 +1,4 @@
-package com.wzres.collection1;
+package com.wzres.list1;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -29,7 +29,7 @@ public class SetTest02 {
         System.out.println("----------------------");
 
         Set s2 = new TreeSet();
-        //无序不可重复，会按照从小到大自动排序
+        //无序不可重复，会按照从小到大自动排序(仅限String、Integer)
         s2.add(14);
         //s2.add("你好");
         s2.add(30);

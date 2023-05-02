@@ -1,4 +1,4 @@
-package com.wzres.collection1;
+package com.wzres.map1;
 
 import java.util.*;
 

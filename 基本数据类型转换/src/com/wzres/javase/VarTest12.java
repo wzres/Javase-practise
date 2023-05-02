@@ -35,8 +35,6 @@ public class VarTest12 {
 
         byte b6 = (byte) (b5/num);
 
-
-
         int age = 17;
 
         float fb = (float) (age + 12.5);

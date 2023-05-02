@@ -1,4 +1,4 @@
-package com.wzres.collection1;
+package com.wzres.list1;
 
 import java.util.HashSet;
 import java.util.Set;

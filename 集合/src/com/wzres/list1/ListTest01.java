@@ -1,4 +1,4 @@
-package com.wzres.collection1;
+package com.wzres.list1;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -11,6 +11,7 @@ import java.util.List;
  */
 public class ListTest01 {
     public static void main(String[] args) {
+        // 有序可重复
         List mylist = new ArrayList();
         mylist.add(1);
         mylist.add(4);
