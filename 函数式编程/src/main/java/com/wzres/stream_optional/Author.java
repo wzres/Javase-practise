@@ -1,11 +1,10 @@
-package com.wzres.stream1;
+package com.wzres.stream_optional;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import com.wzres.stream1.Book ;
 import java.util.List;
 
 @Data

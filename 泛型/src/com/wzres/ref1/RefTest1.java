@@ -34,7 +34,7 @@ class SonHello1 extends Hello<Integer>{
     }
 }
 
-class SonHello2<T> extends  Hello<T>{
+class SonHello2<T> extends Hello<T>{
     @Override
     public void test(T t) {
         System.out.println(t);

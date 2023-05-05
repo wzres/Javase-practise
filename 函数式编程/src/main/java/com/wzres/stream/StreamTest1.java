@@ -1,4 +1,4 @@
-package com.wzres.stream2;
+package com.wzres.stream;
 
 import java.util.*;
 import java.util.function.Consumer;
