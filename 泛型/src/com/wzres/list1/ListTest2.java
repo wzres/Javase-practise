@@ -1,4 +1,4 @@
-package com.wzres.List1;
+package com.wzres.list1;
 
 import java.util.ArrayList;
 import java.util.List;

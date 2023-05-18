@@ -1,71 +1,67 @@
-package com.wzres.stream_optional;
+package com.wzres.optional;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
+import com.wzres.stream_optional.Author;
+import com.wzres.stream_optional.Book;
+
+import java.util.*;
 
 /**
- * @ClassName：StreamTest4
- * @description：终结操作之查找与匹配
- * @date：2023-05-05 11:44
+ * @ClassName：OptionalTest1
+ * @description：
+ * @date：2023-05-10 21:38
  */
-public class StreamTest4 {
-
+public class OptionalTest1 {
     public static void main(String[] args) {
-        test17(); //findFirst：获取流中的第一元素
-        test16(); //findAny：获取流中的任意一个元素
-        test15(); //noneMatch：都不符合条件，结果才为true
-        test14(); //allMatch：所有条件都符合，结果才为true
-        test13(); //anyMatch：任意符合一个，结果就为true
-
+        test3();
+        //test2();
+        //test1();
     }
 
-    private static void test17() {
-        //获取一个年龄最小的作家，并输出他的姓名。
+    private static void test3() {
         List<Author> authors = getAuthors();
-        Optional<Author> optionalAuthor2 = authors.stream()
-                .sorted((o1, o2) -> o1.getAge() - o2.getAge())
-                .findFirst();
+        long count = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .distinct()
+                .count();
+        System.out.println(count);
 
-        optionalAuthor2.ifPresent(author -> System.out.println(author.getName()));
     }
 
-    private static void test16() {
-        // 获取任意一个年龄大于18的作家，如果存在就输出他的名字
+    private static void test2() {
         List<Author> authors = getAuthors();
-        Optional<Author> optionalAuthor1 = authors.stream()
-                .filter(author -> author.getAge() > 18)
-                .findAny();
-        //ifPresent：如果存在年龄大于18的作家就输出，否则不会输出，避免空指针异常
-        optionalAuthor1.ifPresent(author -> System.out.println(author.getName()));
+        Optional<Integer> max = authors.stream()
+                .distinct()
+                .map(author -> author.getAge())
+                .max(new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return o1 - o2;
+                    }
+                });
+
+        System.out.println(max.get());
+
+        Optional<Integer> min = authors.stream()
+                .distinct()
+                .map(author -> author.getAge())
+                .max(new Comparator<Integer>() {
+                    @Override
+                    public int compare(Integer o1, Integer o2) {
+                        return o2 - o1;
+                    }
+                });
+
+        System.out.println(min.get());
+
 
     }
 
-    private static void test15() {
+    private static void test1() {
         List<Author> authors = getAuthors();
-        boolean flag3 = authors.stream()
-                .noneMatch(author -> author.getAge() == 20);
-        System.out.println(flag3);
+        authors.stream()
+                .map(author -> author.getName())
+                .forEach(name -> System.out.println(name));
     }
-
-    private static void test14() {
-        List<Author> authors = getAuthors();
-        boolean flag2 = authors.stream()
-                .allMatch(author -> author.getAge()>=18);
-
-        System.out.println(flag2); //false
-    }
-
-    private static void test13() {
-        List<Author> authors = getAuthors();
-        boolean flag1 = authors.stream()
-                .anyMatch(author -> author.getAge()>25);
-
-
-        System.out.println(flag1); //true
-    }
-
 
     private static List<Author> getAuthors() {
         //数据初始化

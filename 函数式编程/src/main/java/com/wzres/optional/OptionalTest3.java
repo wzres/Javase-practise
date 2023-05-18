@@ -1,4 +1,7 @@
-package com.wzres.stream_optional;
+package com.wzres.optional;
+
+import com.wzres.stream_optional.Author;
+import com.wzres.stream_optional.Book;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,66 +9,38 @@ import java.util.List;
 import java.util.Optional;
 
 /**
- * @ClassName：StreamTest4
- * @description：终结操作之查找与匹配
- * @date：2023-05-05 11:44
+ * @ClassName：OptionalTest3
+ * @description：
+ * @date：2023-05-13 10:33
  */
-public class StreamTest4 {
-
+public class OptionalTest3 {
     public static void main(String[] args) {
-        test17(); //findFirst：获取流中的第一元素
-        test16(); //findAny：获取流中的任意一个元素
-        test15(); //noneMatch：都不符合条件，结果才为true
-        test14(); //allMatch：所有条件都符合，结果才为true
-        test13(); //anyMatch：任意符合一个，结果就为true
+        test1();
 
     }
 
-    private static void test17() {
-        //获取一个年龄最小的作家，并输出他的姓名。
+    private static void test1() {
         List<Author> authors = getAuthors();
-        Optional<Author> optionalAuthor2 = authors.stream()
+        boolean b = authors.stream()
+                .anyMatch(author -> author.getAge() < 7);
+                //.allMatch(author -> author.getAge() < 18);
+                //.noneMatch(author -> author.getAge() < 8);
+        System.out.println(b);
+
+        List<Author> authors2 = getAuthors();
+        Optional<Author> any = authors2.stream()
+                .filter(author -> author.getAge() > 7)
+                .findAny();
+        any.ifPresent(author -> System.out.println(author.getName()));
+
+        List<Author> authors3 = getAuthors();
+        Optional<Author> first = authors3.stream()
                 .sorted((o1, o2) -> o1.getAge() - o2.getAge())
                 .findFirst();
 
-        optionalAuthor2.ifPresent(author -> System.out.println(author.getName()));
-    }
-
-    private static void test16() {
-        // 获取任意一个年龄大于18的作家，如果存在就输出他的名字
-        List<Author> authors = getAuthors();
-        Optional<Author> optionalAuthor1 = authors.stream()
-                .filter(author -> author.getAge() > 18)
-                .findAny();
-        //ifPresent：如果存在年龄大于18的作家就输出，否则不会输出，避免空指针异常
-        optionalAuthor1.ifPresent(author -> System.out.println(author.getName()));
+        first.ifPresent(author -> System.out.println(author.getName()));
 
     }
-
-    private static void test15() {
-        List<Author> authors = getAuthors();
-        boolean flag3 = authors.stream()
-                .noneMatch(author -> author.getAge() == 20);
-        System.out.println(flag3);
-    }
-
-    private static void test14() {
-        List<Author> authors = getAuthors();
-        boolean flag2 = authors.stream()
-                .allMatch(author -> author.getAge()>=18);
-
-        System.out.println(flag2); //false
-    }
-
-    private static void test13() {
-        List<Author> authors = getAuthors();
-        boolean flag1 = authors.stream()
-                .anyMatch(author -> author.getAge()>25);
-
-
-        System.out.println(flag1); //true
-    }
-
 
     private static List<Author> getAuthors() {
         //数据初始化
