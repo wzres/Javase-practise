@@ -1,4 +1,4 @@
-package com.wzres.compare;
+package com.wzres.compare1;
 
 import java.util.Set;
 import java.util.TreeSet;
