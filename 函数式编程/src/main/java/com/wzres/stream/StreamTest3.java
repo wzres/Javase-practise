@@ -1,62 +1,59 @@
-package com.wzres.stream_optional;
+package com.wzres.stream;
 
-import java.util.*;
+import com.wzres.stream_optional.Author;
+import com.wzres.stream_optional.Book;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
 
 /**
- * @ClassName：StreamTest2
- * @description：终结操作
- * @date：2023-05-05 11:08
+ * @ClassName：StreamTest1
+ * @description：
+ * @date：2023-05-06 21:59
  */
-public class StreamTest2 {
+public class StreamTest3 {
     public static void main(String[] args) {
-        test9(); //max&min
-        //test8(); //count
-        //test7(); //forEach
+        test4();
+        //test3();
+        //test2();
+        //test1();
+
     }
 
-    private static void test9() {
+    private static void test4() {
         List<Author> authors = getAuthors();
-        Optional<Integer> max = authors.stream()
-                .flatMap(author -> author.getBooks().stream())
-                .map(book -> book.getScore())
-                .max(new Comparator<Integer>() {
-                    @Override
-                    public int compare(Integer o1, Integer o2) {
-                        return o1 - o2;
-                    }
-                });
-
-        Optional<Integer> min = authors.stream()
-                .flatMap(author -> author.getBooks().stream())
-                .map(book -> book.getScore())
-                .min((o1, o2) -> o1 - o2);
-
-
-        System.out.println(max.get());
-        System.out.println(min.get());
-    }
-
-    private static void test8() {
-        List<Author> authors = getAuthors();
-        long count = authors.stream()
+        authors.stream()
                 .flatMap(author -> author.getBooks().stream())
                 .distinct()
-                .count();
-        System.out.println("所有书籍数目："+count);
+                .forEach(book -> System.out.println(book.getName()));
     }
 
-    private static void test7() {
-        //①
+    private static void test3() {
+        List<Author> authors = getAuthors();
+        authors.stream()
+                .map(author -> author.getAge())
+                .distinct()
+                .sorted((o1, o2) -> o1 - o2)
+                .skip(2)
+                //.limit(1)
+                .forEach(age -> System.out.println(age));
+    }
+
+    private static void test2() {
         List<Author> authors = getAuthors();
         authors.stream()
                 .distinct()
-                .forEach(author -> System.out.println(author.getName()));
-
-        //②
-        authors.stream()
                 .map(author -> author.getName())
-                .distinct()
                 .forEach(name -> System.out.println(name));
+    }
+
+    private static void test1() {
+        List<Author> authors = getAuthors();
+        authors.stream()
+                .filter(author -> author.getAge()>16)
+                .forEach(author -> System.out.println(author.getName()));
     }
 
     private static List<Author> getAuthors() {

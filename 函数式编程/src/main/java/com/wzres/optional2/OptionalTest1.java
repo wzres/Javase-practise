@@ -1,62 +1,93 @@
-package com.wzres.stream_optional;
+package com.wzres.optional2;
 
-import java.util.*;
+import com.wzres.stream_optional.Author;
+import com.wzres.stream_optional.Book;
+
+import javax.xml.bind.Element;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
- * @ClassName：StreamTest2
- * @description：终结操作
- * @date：2023-05-05 11:08
+ * @ClassName OptionalTest1
+ * @description
+ * @date 2023-06-01 21:57
  */
-public class StreamTest2 {
+public class OptionalTest1 {
     public static void main(String[] args) {
-        test9(); //max&min
-        //test8(); //count
-        //test7(); //forEach
-    }
+        test7();
+        //test6();
+        //test5();
+        //test4();
+        //test3();
+        //test2();
+        //test1();
 
-    private static void test9() {
-        List<Author> authors = getAuthors();
-        Optional<Integer> max = authors.stream()
-                .flatMap(author -> author.getBooks().stream())
-                .map(book -> book.getScore())
-                .max(new Comparator<Integer>() {
-                    @Override
-                    public int compare(Integer o1, Integer o2) {
-                        return o1 - o2;
-                    }
-                });
-
-        Optional<Integer> min = authors.stream()
-                .flatMap(author -> author.getBooks().stream())
-                .map(book -> book.getScore())
-                .min((o1, o2) -> o1 - o2);
-
-
-        System.out.println(max.get());
-        System.out.println(min.get());
-    }
-
-    private static void test8() {
-        List<Author> authors = getAuthors();
-        long count = authors.stream()
-                .flatMap(author -> author.getBooks().stream())
-                .distinct()
-                .count();
-        System.out.println("所有书籍数目："+count);
     }
 
     private static void test7() {
-        //①
         List<Author> authors = getAuthors();
-        authors.stream()
+        Optional<Integer> min = authors.stream()
                 .distinct()
-                .forEach(author -> System.out.println(author.getName()));
+                .map(author -> author.getAge())
+                .reduce((result, element) -> result < element ? element : result);
 
-        //②
-        authors.stream()
+        min.ifPresent(num-> System.out.println(num));
+
+
+    }
+
+    private static void test6() {
+        List<Author> authors = getAuthors();
+        Optional<Integer> result = authors.stream()
+                .distinct()
+                .map(author -> author.getAge())
+                .sorted((o1, o2) -> o2 - o1)
+                .findFirst();
+        result.ifPresent(age-> System.out.println(age));
+    }
+
+    private static void test5() {
+        List<Author> authors = getAuthors();
+        Optional<Author> result = authors.stream()
+                .filter(author -> author.getAge() < 32)
+                .findAny();
+        result.ifPresent(author -> System.out.println(author.getName()));
+    }
+
+    private static void test4() {
+        List<Author> authors = getAuthors();
+        System.out.println(authors.stream()
+                .anyMatch(author -> author.getAge() > 18));
+    }
+
+    private static void test3() {
+        List<Author> authors = getAuthors();
+        List<String> list = authors.stream()
+                .flatMap(author -> author.getBooks().stream())
+                .map(book -> book.getName())
+                .distinct()
+                .collect(Collectors.toList());
+        System.out.println(list);
+    }
+
+    private static void test2() {
+        List<Author> authors = getAuthors();
+        long count = authors.stream()
                 .map(author -> author.getName())
                 .distinct()
-                .forEach(name -> System.out.println(name));
+                .count();
+        System.out.println(count);
+    }
+
+    private static void test1() {
+        List<Author> authors = getAuthors();
+        Optional<Integer> max = authors.stream()
+                .map(author -> author.getAge())
+                .max((o1, o2) -> o1 - o2);
+        max.ifPresent(age-> System.out.println(age));
     }
 
     private static List<Author> getAuthors() {
@@ -90,4 +121,5 @@ public class StreamTest2 {
         List<Author> authorList = new ArrayList<>(Arrays.asList(author,author2,author3,author4));
         return authorList;
     }
+
 }
