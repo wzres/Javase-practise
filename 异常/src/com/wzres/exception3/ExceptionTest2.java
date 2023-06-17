@@ -1,24 +1,22 @@
-package com.wzres.exception.exception2;
+package com.wzres.exception3;
 
 /**
- * @ClassName RunTimeExceptionTest1
+ * @ClassName ExceptionTest2
  * @description
- * @date 2023-05-31 22:59
+ * @date 2023-06-07 11:21
  */
-public class RunTimeExceptionTest1 {
+public class ExceptionTest2 {
     public static void main(String[] args) {
-
         try {
-            flag();
+            primary();
         } catch (Exception e) {
+            System.out.println("空指针运行时异常...");
             e.printStackTrace();
         }
     }
 
-    private static void flag() {
+    private static void primary() {
         String s = null;
         System.out.println(s.trim());
     }
-
-
 }
