@@ -22,7 +22,18 @@ public class VarTest01 {
                 long l2 = s;
 
                 char c = 54/8;
+                System.out.println(c);
                 double d = c;
+
+                char age = '\n';
+
+                System.out.print("hello");
+                System.out.println(age);
+                System.out.print("hello");
+
+
+
+                //System.out.println(d);
 
                 // 大容量 ➟ 小容量
                 float f2 = (float) 3.45;
