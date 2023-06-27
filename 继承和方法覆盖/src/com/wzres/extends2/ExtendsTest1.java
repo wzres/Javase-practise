@@ -6,7 +6,6 @@ package com.wzres.extends2;
  * @date：2023-04-24 21:39
  */
 public class ExtendsTest1 {
-
     public static void main(String[] args) {
         Student s = new Student();
         s.setUsername("zhangsan");
@@ -25,7 +24,6 @@ class Student extends School{
     public String getUsername() {
         return username;
     }
-
     public void setUsername(String username) {
         this.username = username;
     }
